@@ -54,7 +54,6 @@ psycopg2-binary==2.9.9
 # ├── app.db                 # Fichier SQLite (si utilisé temporairement)
 # ├── requirements.txt       # Dépendances et instructions
 # ├── run.py                 # Point d'entrée de l'application
-# └── migrations/            # Dossier pour les migrations de la base de données
 
 # ===================================================
 # Fonctionnalités principales
