@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<h2>📋 Liste des films</h2>
+
+<!-- Formulaire de recherche et de filtrage -->
+<form method="GET" action="{{ url_for('index') }}" class="search-filter-form">
+    <input type="text" name="search" placeholder="Rechercher un film..." value="{{ search_query }}">
+    <select name="filter">
+        <option value="all" {% if filter_status == 'all' %}selected{% endif %}>Tous</option>
+        <option value="watched" {% if filter_status == 'watched' %}selected{% endif %}>Vus</option>
+        <option value="not_watched" {% if filter_status == 'not_watched' %}selected{% endif %}>Non vus</option>
+    </select>
+    <button type="submit">Rechercher</button>
+</form>
+
+<!-- Liste des films -->
+{% if movies %}
+    <div class="movie-list">
+        {% for movie in movies %}
+        <div class="movie-item">
+            <img src="{{ movie.image_url or url_for('static', filename='default_movie.jpg') }}" alt="Affiche de {{ movie.title }}">
+            <div class="movie-details">
+                <h3>{{ movie.title }}</h3>
+                <p><strong>Année :</strong> {{ movie.year or "Année inconnue" }}</p>
+                <p><strong>Description :</strong> {{ movie.description or "Aucune description disponible." }}</p>
+                <p>
+                    {% if movie.watched %}
+                        ✅ Vu
+                    {% else %}
+                        ⏳ À voir
+                    {% endif %}
+                </p>
+                <div class="movie-actions">
+                    <a href="{{ url_for('toggle_watched', movie_id=movie.id) }}">Basculer</a> |
+                    <a href="{{ url_for('delete_movie', movie_id=movie.id) }}">Supprimer</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Aucun film trouvé.</p>
+{% endif %}
+{% endblock %}

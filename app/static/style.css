@@ -1,0 +1,214 @@
+/* Couleurs principales */
+:root {
+    --primary-color: #FFD700; /* Jaune */
+    --secondary-color: #000000; /* Noir */
+    --background-color: #FFFFFF; /* Blanc */
+    --text-color: #333333; /* Gris foncé */
+}
+
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header nav {
+    margin-top: 0.5rem;
+}
+
+header nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Liste des films */
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Élément de film */
+.movie-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image du film */
+.movie-item img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+}
+
+/* Détails du film */
+.movie-details {
+    flex: 1;
+}
+
+.movie-details h3 {
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.movie-details p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+/* Actions sur le film */
+.movie-actions a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.movie-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Formulaire */
+form.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form.form label {
+    font-weight: bold;
+}
+
+form.form input, form.form textarea, form.form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+form.form button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+form.form button:hover {
+    background-color: #FFC107;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Formulaire de recherche et de filtrage */
+.search-filter-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-filter-form input,
+.search-filter-form select,
+.search-filter-form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+.search-filter-form button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.search-filter-form button:hover {
+    background-color: #FFC107;
+}

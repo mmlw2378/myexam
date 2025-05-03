@@ -1,0 +1,89 @@
+# ===================================================
+# MyMovieWatchlist – Projet Flask
+# Auteur : Mame Marie Louise Wadd
+# Description :
+#   Application web permettant de gérer une liste de films à regarder.
+#   L'utilisateur peut ajouter des films, les marquer comme "vus", et filtrer la liste.
+# ===================================================
+
+# 🔧 Dépendances nécessaires
+Flask==2.3.2
+Flask-SQLAlchemy==3.0.3
+psycopg2-binary==2.9.9
+
+# ===================================================
+# Étapes pour configurer et exécuter le projet
+# ===================================================
+# 1. Cloner ou extraire ce projet.
+# 2. Créer un environnement virtuel :
+#       python -m venv venv
+# 3. Activer l'environnement virtuel :
+#       - Linux/Mac : source venv/bin/activate
+# 4. Installer les dépendances :
+#       pip install -r requirements.txt
+# 5. Configurer la base de données PostgreSQL :
+#       - Nom de la base de données : mymoviedb
+#       - Nom d'utilisateur : postgres
+#       - Mot de passe : Marielouise03
+#       - Hôte : localhost
+#       - Port : 5433
+# 6. Créer la base de données PostgreSQL :
+#       - Connectez-vous à PostgreSQL avec la commande :
+#             psql -U postgres
+#       - Créez la base de données avec la commande :
+#             CREATE DATABASE mymoviedb;
+# 7. Lancer l'application Flask :
+#       python run.py
+# 8. Accéder à l'application dans le navigateur :
+#       http://127.0.0.1:5000
+
+# ===================================================
+# 📂 Structure du projet
+# ===================================================
+# myexam/
+# ├── app/
+# │   ├── __init__.py        # Initialisation de l'application Flask
+# │   ├── models.py          # Définition des modèles (base de données)
+# │   ├── routes.py          # Toutes les routes (views)
+# │   ├── templates/         # Fichiers HTML (Jinja2)
+# │   │   ├── base.html      # Template de base
+# │   │   ├── index.html     # Page d'accueil
+# │   │   └── add_movie.html # Page pour ajouter un film
+# │   └── static/            # Fichiers CSS, images
+# │       └── style.css      # Fichier de style principal
+# ├── app.db                 # Fichier SQLite (si utilisé temporairement)
+# ├── requirements.txt       # Dépendances et instructions
+# ├── run.py                 # Point d'entrée de l'application
+# └── migrations/            # Dossier pour les migrations de la base de données
+
+# ===================================================
+# Fonctionnalités principales
+# ===================================================
+# 1. Ajouter un film avec un titre, une année, une description et une image.
+# 2. Afficher la liste des films avec leurs détails.
+# 3. Marquer un film comme "vu" ou "non vu".
+# 4. Supprimer un film de la liste.
+# 5. Recherche et filtrage des films par titre, vus ou non vus.
+
+# ===================================================
+# Informations sur la base de données
+# ===================================================
+# - Nom de la base de données : mymoviedb
+# - Nom d'utilisateur : postgres
+# - Mot de passe : Marielouise03
+# - Hôte : localhost
+# - Port : 5433
+# - Type de base de données : PostgreSQL
+# - Modèle de la table `movies` :
+#       id (Integer, clé primaire)
+#       title (String, obligatoire)
+#       year (Integer, facultatif)
+#       description (Text, facultatif)
+#       image_url (String, facultatif)
+#       watched (Boolean, par défaut False)
+
+# ===================================================
+# 📍 Remarques :
+# - Le projet utilise une structure MVC simple sans blueprint.
+# - Toutes les routes sont dans routes.py
+# - Base de données PostgreSQL nécessaire (à créer à l'avance)
